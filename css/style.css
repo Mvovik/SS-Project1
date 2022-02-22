@@ -1,0 +1,316 @@
+:root{
+    --color1:#5d79c0;
+    --color2:#36409b;
+    --color3:#fff;
+}
+
+html,
+body {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Arial", "Helvetica", sans-serif;
+    line-height: 20px;
+    font-size: 15px;
+    color: #333;
+}
+
+a {
+    color: #000;
+    display: inline-block;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+}
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* MAIN PAGE START! */
+/* Menu--start */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: radial-gradient(var(--color1), var(--color2));
+    box-shadow: 0 4px 10px var(--color1);
+    /* opacity: 1; */
+    z-index: 99;
+}
+
+.menu__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu__nav {
+    max-width: 50vw;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+.menu__list-link {
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 2.5rem 0.5rem;
+}
+
+.menu__list-link:hover,
+.menu__list-link:focus {
+    background-color: var(--color2);
+    box-shadow: 0 4px 10px var(--color1);
+    color: var(--color3);
+    transition: all ease-in 0.2s;
+}
+.menu__list-link:active{
+    background-color: var(--color1);
+}
+
+.menu__list-item .drop-down {
+    position: relative;
+}
+
+.drop-down__list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: var(--color3);
+    border: 2px solid var(--color1);
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.drop-down:hover .drop-down__list,
+.drop-down:focus .drop-down__list {
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+    transition: all ease 0.5s;
+}
+
+.drop-down:hover > a {
+    background-color: var(--color2);
+    box-shadow: 0 4px 10px var(--color1);
+    color: var(--color3);
+    transition: all ease-in 0.2s;
+}
+
+.drop-down__list a {
+    padding: 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.drop-down__list a:hover {
+    background-color: var(--color1);
+    box-shadow: 0 4px 10px var(--color1);
+    color: var(--color3);
+    transition: all ease-in 0.2s;
+}
+
+.menu__logo {
+    margin: 10px 30px;
+    height: 80px;
+    width: 80px;
+}
+
+.menu__logo:hover,
+.menu__logo:focus {
+    animation: wheel ease-in-out 1.5s 0.2s;
+    animation-fill-mode: both;
+}
+@keyframes wheel {
+    from {
+        transform: translateX(0) rotate(0);
+    }
+    to {
+        transform: translateX(-45vw) rotate(-3turn);
+    }
+}
+
+/* Menu--end */
+/* Header--start */
+
+.header__item {
+    background: url(../images/pistol_mixed_team___ukr.jpg), radial-gradient(var(--color2), var(--color1));
+    background-position: left top;
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__item-title {
+    color: var(--color3);
+    text-shadow: 0px 0px 1px rgba(84, 107, 247, 0), 0px 0px 12px var(--color2);
+    font-size: 4vw;
+    position: sticky;
+    top: 35%;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header__item-title:hover {
+    transform: scale(1.5);
+}
+
+/* Header--end */
+/* Main--start */
+.content__inner {
+    padding: 4vh 0;
+}
+
+.content__article {
+    padding: 2vh 1vw;
+}
+
+.content__title {
+    text-align: center;
+    margin: 0;
+    padding: 1vh 1vw;
+}
+.content__text {
+    text-indent: 2.5rem;
+    font-size: 1rem;
+}
+
+/* Main--end */
+/* Footer--start */
+.footer {
+    position: sticky;
+    top: 100vh;
+    padding: 1.5vh 1.5vw;
+    font-weight: 700;
+    font-size: 1.5vw;
+    background: radial-gradient(var(--color1), var(--color2));
+}
+
+.footer__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__useful-link--issf {
+    margin-right: 3rem;
+}
+.footer__useful-items {
+    display: flex;
+}
+
+.footer__useful-link--issf div {
+    background-image: url(../images/issf.png);
+    background-position: center center;
+    background-size: contain;
+    height: 75px;
+    width: 60px;
+    filter: grayscale(1);
+}
+.footer__useful-link--issf:hover div {
+    filter: grayscale(0);
+}
+
+.footer__useful-link--ioc div {
+    background-image: url(../images/ioc.png);
+    background-position: center center;
+    background-size: contain;
+    height: 60px;
+    width: 75px;
+    filter: grayscale(1);
+}
+.footer__useful-link--ioc:hover div {
+    filter: grayscale(0);
+}
+
+.footer__item-social li:nth-child(n + 2) {
+    margin-left: 1rem;
+}
+
+/* Footer--end */
+/* MAIN PAGE END! */
+
+/* FANS PAGE START! */
+.content.fans-post__list {
+    margin-top: 100px;
+}
+.content__article.fans-post__article{
+    border-bottom: 2px solid #000;
+}
+.content__article.fans-post__article > p {
+    font-size: 1rem;
+}
+
+.fans-post__description {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fans-post__description span{
+    margin-right: 2rem;
+}
+
+.fans-post__form {
+    margin: 1vh 0;
+    padding: 2vh 0;
+}
+
+.fans-post__form form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.fans-post__form-textarea {
+    width: 80%;
+    margin-right: 5%;
+    
+}
+.fans-post__form-textarea + button {
+    height: 2.5rem;
+    width: 7rem;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    border: 1px solid var(--color2);
+    border-radius: 2px;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.fans-post__form-textarea + button:hover {
+    background: radial-gradient(var(--color1), var(--color2));
+    color: var(--color3);
+}
+/* FANS PAGE END! */
